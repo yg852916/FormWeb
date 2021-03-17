@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>履歷表</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background: url(images/bg2.jpg) no-repeat;
+            background-size: cover;
+        }
+
+        .main {
+            background-color: rgb(10, 134, 124,0.5);
+            color: white;
+            height: 1000px;
+            margin-bottom: 100px;
+            padding: 50px 200px;
+            box-shadow: 0px 0px 20px rgba(241, 207, 11, 0.7);
+        }
+
+        .logo {
+            color: white;
+            font-size: 50px;
+
+        }
+        input{
+            background-color: rgba(255, 251, 251, 0.658) !important;
+            font-weight:500 !important; 
+        }
+        .bg-bluelow{
+            background-color: rgb(136, 183, 255) !important;
+        }
+        label{
+            font-weight: 500px !important;
+        }
+        input[type='radio']{
+            height: 20px;
+            width: 20px;
+        }
+        input[type='checkBox']{
+            height: 20px;
+            width: 20px;
+        }
+        
+
+    </style>
+    <script>
+        function CheckInput(id) {
+            var str = document.getElementById(id).value;
+            if (str.length == 0) {
+                document.getElementById(id).classList.toggle('is-invalid', true);
+                document.getElementById(id).classList.toggle('is-valid', false);
+                document.getElementById(id).classList.toggle('bg-light',false);
+            }
+            else {
+                document.getElementById(id).classList.toggle('is-invalid', false);
+                document.getElementById(id).classList.toggle('is-valid', true);
+                document.getElementById(id).classList.toggle('bg-light',true);
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="p-5 text-center">
+        <h1 class="logo">履歷填寫單</h1>
+    </div>
+
+    <div class="container main">
+        <form action="">
+            <h1 class="pt-3 pb-3 bg-info text-center">個人資料</h1>
+            <!--學校名稱-->
+            <div class="form-group row">
+                <label for="inputSchool" class="col-sm-2 col-form-label">學校名稱</label>
+                <div class="col-sm-10">
+                    <input  type="text" class="form-control"
+                        id="inputSchool" placeholder="例如：台灣大學" oninput="CheckInput(this.id)">
+                </div>
+            </div>
+            <!--學歷-->
+            <div class="form-group row">
+                <label for="disabledSelect" class="col-sm-2 col-form-label">學歷</label>
+                <div class="col-sm-10">
+                    <select id="disabledSelect" class="form-control">
+                        <option>博士</option>
+                        <option>碩士</option>
+                        <option>大學</option>
+                        <option>高中</option>
+                        <option>國中(含)以下</option>
+                    </select>
+                </div>
+            </div>
+            <!--科系名稱-->
+            <div class="form-group row">
+                <label for="inputDepartment" class="col-sm-2 col-form-label">科系名稱</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputDepartment" placeholder="例如：資訊管理系"
+                        oninput="CheckInput(this.id)">
+                </div>
+            </div>
+            <!--就學期間-->
+            <div class="form-group row">
+                <label for="duringSchool" class="col-sm-2 col-form-label">畢業時間</label>
+                <div class="col-sm-10">
+                    <input type="date" class="form-control" id="duringSchool" placeholder="" oninput="CheckInput(this.id)">
+                </div>
+            </div>
+            <!--就學狀態-->
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">就學狀態</label>
+                <div class="pl-3 form-check form-check-inline">
+                    <input style="width: 20px;height: 20px;background-color: orange !important;" class="form-check-input" type="radio" name="schoolStatus" id="schoolStatus1" value="option1">
+                    <label class="form-check-label" for="schoolStatus1">畢業</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="schoolStatus" id="schoolStatus2" value="option2">
+                    <label class="form-check-label" for="schoolStatus2">肄業</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="schoolStatus" id="schoolStatus3" value="option2">
+                    <label class="form-check-label" for="schoolStatus3">就學中</label>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-sm-2"></label>
+                <div class="col-sm-5    ">
+                    <select id="schoolStatusSelect" class="form-control">
+                        <option>日間就讀中</option>
+                        <option>夜間就讀中</option>
+                        <option>假日就讀中</option>
+                    </select>
+                </div>
+            </div>
+            <!--學校地區-->
+            <div class="form-group row">
+                <label for="inputSchool" class="col-sm-2 col-form-label">學校地區</label>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="schoolAreaRadio" id="schoolAreaRadio1"
+                        value="option1">
+                    <label class="form-check-label" for="schoolAreaRadio1">台灣</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="schoolAreaRadio" id="schoolAreaRadio2"
+                        value="option2">
+                    <label class="form-check-label" for="schoolAreaRadio2">國外</label>
+                </div>
+            </div>
+            <h1 class="pt-3 pb-3 bg-info text-center">希望工作條件</h1>
+            <!--希望性質-->
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">希望性質</label>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="natureOfHope1" value="">
+                    <label class="form-check-label" for="natureOfHope1">全職工作</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="natureOfHope2" value="">
+                    <label class="form-check-label" for="natureOfHope2">兼職工作</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="natureOfHope3" value="">
+                    <label class="form-check-label" for="natureOfHope3">實習工作</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="natureOfHope4" value="">
+                    <label class="form-check-label" for="natureOfHope4">寒暑假工讀</label>
+                </div>
+            </div>
+            <!--上班時段-->
+            <div class="form-group row">
+                <label for="" class="col-sm-2 col-form-label">上班時段</label>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="workingHoursCheckBox1" value="">
+                    <label class="form-check-label" for="workingHoursCheckBox1">日班</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="workingHoursCheckBox2" value="">
+                    <label class="form-check-label" for="workingHoursCheckBox2">晚班</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="workingHoursCheckBox3" value="">
+                    <label class="form-check-label" for="workingHoursCheckBox3">大夜班</label>
+                </div>
+                <div class="pl-3 form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="workingHoursCheckBox4" value="">
+                    <label class="form-check-label" for="workingHoursCheckBox4">假日班</label>
+                </div>
+            </div>
+            <!--其他時段-->
+            <div class="form-group row">
+                <label for="otherTime" class="col-sm-2 col-form-label">其他時段</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="otherTime" placeholder="例如：星期三~五18:00-22:00" oninput="CheckInput(this.id)">
+                </div>
+            </div>
+
+            <!--希望職類-->
+            <div class="form-group row">
+                <label for="hopeJobCategory" class="col-sm-2 col-form-label">希望職類</label>
+                <div class="col-sm-10">
+                    <select id="hopeJobCategory" class="form-control">
+                        <option>工程師</option>
+                        <option>管理員</option>
+
+                    </select>
+                </div>
+            </div>
+
+
+        </form>
+        <div class="text-right">
+            <button type="button" class="btn btn-dark mt-3">送出
+            </button>
+        </div>
+        
+    </div>
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
